@@ -1,0 +1,74 @@
+:root{
+  --primary-color: #3f3f3f;
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #aaa;
+}
+
+.calc{
+  display: flex;
+  flex-direction: column;
+  width: calc(4 * 4.8em + 3 * .625em);
+  row-gap: 20px;
+  background: #1f1f1f;
+  padding: 1.5em;
+  border-radius: 1.75em;
+}
+
+.calc--tecla {
+  display: grid;
+  grid-template-columns: repeat(4, 4.8em);
+  grid-template-rows: repeat(5, 4.8em);
+  gap: .625em;
+}
+
+.calc--tecla .btn {
+  border-radius: 50%;
+  border: 0;
+  font-size: 1.5em;
+  background: var(--primary-color);
+  color: #fff;
+  transition:
+  background 70ms linear,
+  color 70ms linear;
+  &:hover {
+    background: #ccc;
+    color: #000;
+  }
+}
+
+.calc--tecla .btn-c {
+  background: #aaa;
+}
+
+.calc--tecla .btn:nth-child(4n),
+.calc--tecla .btn:last-child{
+  background: #ffa300;
+  transition: background 30ms linear;
+  &:hover{
+    background: #ffa30060;
+  }
+}
+
+.calc--tecla .btn:nth-child(17){
+  grid-column: 1 / 3;
+  border-radius: 50px;
+}
+
+input{
+  height: 1.5em;
+  padding: .55em;
+  font-size: 2em;
+  background: var(--primary-color);
+  border: 0;
+  text-align: right;
+  color: #fff;
+  border-radius: .25em;
+}
